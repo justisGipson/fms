@@ -56,7 +56,7 @@ func (l Link) ID() int64 {
 	return l.Id
 }
 
-func (l Link) ReversedLine() graph.line {
+func (l Link) ReversedLine() graph.Line {
 	return Link{F: l.T, T: l.F}
 }
 
@@ -75,7 +75,7 @@ type StateMachine struct {
 
 func New() *StateMachine {
 	s := &StateMachine{}
-	s.g = multi.NewDirectionGraph()
+	s.g = multi.NewDirectedGraph()
 
 	return s
 }
